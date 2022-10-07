@@ -1,0 +1,74 @@
+:root {
+    --dark: #0B0D17;
+    --light: #D0D6F9;
+    --white: #FFFFFF
+}
+
+* {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--light);
+}
+
+.home {
+    background: #000 url('../../assets/home/background-home-mobile.jpg') no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    padding: 1.5rem;
+
+
+    .title {
+        color: var(--light);
+
+        text-transform: uppercase;
+
+        font-weight: 200;
+        font-size: 1rem;
+
+        letter-spacing: 2.7px;
+
+        margin-top: 3rem;
+
+        text-align: center;
+
+
+        b {
+            font-family: 'Bellefair', serif;
+
+            color: var(--white);
+            display: inline-block;
+            font-size: 5rem;
+            line-height: 6.5rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .text {
+        margin-top: 1rem;
+        text-align: center;
+        line-height: 1.75rem;
+    }
+
+    .explore {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+
+        .button {
+            height: 150px;
+            width: 150px;
+            text-align: center;
+            background-color: var(--white);
+            margin: 0 auto;
+            display: inline-block;
+            border-radius: 5rem;
+        }
+    }
+}
+
+/*
+font-family: 'Bellefair', serif;
+*/
