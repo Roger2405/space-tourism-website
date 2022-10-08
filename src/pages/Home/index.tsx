@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Header from "../../components/Header";
 
 import Styles from './Home.module.scss';
@@ -6,7 +8,6 @@ export default function Home() {
 
     return (
         <div className={Styles.home}>
-            <Header />
             <h1 className={Styles.title}>
                 So, you want to travel to
                 <br /><b>Space</b>
@@ -17,8 +18,7 @@ export default function Home() {
                 because we’ll give you a truly out of this world experience!
             </p>
             <div className={Styles.explore}>
-                <a className={Styles.button} href="">Explore</a>
-
+                <Link className={Styles.button} to={'/destination'} ><span>Explore</span></Link>
             </div>
         </div >
 
