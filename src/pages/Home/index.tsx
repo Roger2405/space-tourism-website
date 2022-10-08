@@ -17,8 +17,9 @@ export default function Home() {
                 outer space and not hover kind of on the edge of it.Well sit back, and relax
                 because we’ll give you a truly out of this world experience!
             </p>
-            <div className={Styles.explore}>
+            <div className={Styles.link}>
                 <Link className={Styles.button} to={'/destination'} ><span>Explore</span></Link>
+
             </div>
         </div >
 

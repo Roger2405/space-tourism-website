@@ -1,5 +1,8 @@
 .home {
     background-image: url('../../assets/home/background-home-mobile.jpg');
+    
+    display: flex;
+    flex-direction: column;
 
     .title {
         color: var(--light);
@@ -13,7 +16,6 @@
 
         margin-top: 1rem;
 
-
         text-align: center;
 
 
@@ -26,32 +28,26 @@
         }
     }
 
+    .link {
+        margin: auto;
+        margin-bottom: 0;
 
-    .explore {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        padding-bottom: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
 
         .button {
+
             height: 150px;
             width: 150px;
-            text-align: center;
+
             background-color: var(--white);
-            margin: 0 auto;
-            display: inline-block;
             border-radius: 5rem;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            text-decoration: none;
 
+            text-decoration: none;
 
             span {
                 text-transform: uppercase;
@@ -62,9 +58,12 @@
 
             }
         }
+
     }
 }
 
+
+
 /*
-font-family: 'Bellefair', serif;
-*/
+    font-family: 'Bellefair', serif;
+    */

@@ -34,10 +34,15 @@
             line-height: 2rem;
             border-bottom: 2px solid #FFFFFF00;
 
-            &:hover {
+            &:hover:not(.active) {
                 border-bottom: 2px solid #FFFFFF44;
             }
+
+            &.active {
+                border-bottom: 2px solid var(--white);
+            }
         }
+
     }
 
     .planet {
@@ -60,7 +65,6 @@
 
     .info {
         text-transform: uppercase;
-        margin-bottom: 2rem;
 
         &__name {
             letter-spacing: 2.36px;

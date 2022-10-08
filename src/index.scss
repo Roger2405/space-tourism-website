@@ -11,7 +11,9 @@
 
 .app>*:not(header) {
     height: 100vh;
-    padding: 6rem 1.5rem;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+    padding-top: 6rem;
 
     background-position: center;
     background-repeat: no-repeat;

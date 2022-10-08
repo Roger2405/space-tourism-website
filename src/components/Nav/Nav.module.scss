@@ -1,0 +1,20 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2.5rem;
+
+    .link {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--white);
+        font-size: 1rem;
+        letter-spacing: 2.6px;
+        margin: 1rem 0;
+
+        span {
+            margin-right: 1rem;
+            color: inherit;
+            font-weight: 700;
+        }
+    }
+}
