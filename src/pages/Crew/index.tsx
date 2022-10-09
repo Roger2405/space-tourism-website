@@ -2,69 +2,67 @@ import { useState } from 'react';
 import styles from './Crew.module.scss';
 
 
-export default function Crew() {
-    const [planetIndex, setPlanetIndex] = useState(0);
+import Photo01 from '../../assets/crew/image-douglas-hurley.png';
+import Photo02 from '../../assets/crew/image-mark-shuttleworth.png';
+import Photo03 from '../../assets/crew/image-victor-glover.png';
+import Photo04 from '../../assets/crew/image-anousheh-ansari.png';
 
-    const planetContent = [
+
+export default function Crew() {
+    const [crewIndex, setCrewIndex] = useState(0);
+
+    const crewContent = [
         {
-            name: "Moon",
-            text: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed.While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
-            distance: "384,400",
-            travelTime: "3 days"
+            photo: Photo01,
+            profession: "Commander",
+            name: "Douglas Hurley",
+            text: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
         },
         {
-            name: "Mars",
-            text: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
-            distance: "225 mil.",
-            travelTime: "9 months"
+            photo: Photo02,
+            profession: "Mission Specialist",
+            name: "Mark Shuttleworth",
+            text: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
         },
         {
-            name: "Europa",
-            text: "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling hockey, or simple relaxation in your snug wintery cabin.",
-            distance: "628 mil.",
-            travelTime: "3 years"
+            photo: Photo03,
+            profession: "Pilot",
+            name: "Victor Glover",
+            text: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. "
         },
         {
-            name: "Titan",
-            text: "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home(just a few hundred degrees colder!).As a bonus, you get striking views of the Rings of Saturn.",
-            distance: "1.6 bil.",
-            travelTime: "7 years"
-        }
+            photo: Photo04,
+            profession: "Flight Engineer",
+            name: "Anousheh Ansari",
+            text: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. "
+        },
 
     ]
 
-    function changePlanet(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, index: number) {
-        setPlanetIndex(index);
-        e.preventDefault();
-    }
-
     return (
         <div className={styles.crew}>
-            <h1 className={styles.title}><b>01</b>Pick your destination</h1>
+            <h1 className={styles.title}><b>02</b>Meet your crew</h1>
+
+            <img className={styles.photo} src={crewContent[crewIndex].photo} alt="" />
+
+            <hr className={styles.line} />
 
             <div className={styles.links}>
-                <a className={`${styles.link} ${planetIndex === 0 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 0)}>Moon</a>
-                <a className={`${styles.link} ${planetIndex === 1 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 1)}>Mars</a>
-                <a className={`${styles.link} ${planetIndex === 2 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 2)}>Europa</a>
-                <a className={`${styles.link} ${planetIndex === 3 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 3)}>Titan</a>
+                <a onClick={() => setCrewIndex(0)} className={`${styles.links__link} ${crewIndex === 0 ? (styles.active) : ''}`}></a>
+                <a onClick={() => setCrewIndex(1)} className={`${styles.links__link} ${crewIndex === 1 ? (styles.active) : ''}`}></a>
+                <a onClick={() => setCrewIndex(2)} className={`${styles.links__link} ${crewIndex === 2 ? (styles.active) : ''}`}></a>
+                <a onClick={() => setCrewIndex(3)} className={`${styles.links__link} ${crewIndex === 3 ? (styles.active) : ''}`}></a>
             </div>
-            <div className={styles.planet}>
-                <h2 className={styles.name}>{planetContent[planetIndex].name}</h2>
+            <div className={styles.info}>
+                <p className={styles.info__profession}>{crewContent[crewIndex].profession}</p>
+                <h2 className={styles.info__name}>{crewContent[crewIndex].name}</h2>
 
-                <p className={styles.description}>
-                    {planetContent[planetIndex].text}
+                <p className={styles.info__description}>
+                    {crewContent[crewIndex].text}
                 </p>
 
             </div>
-            <hr className={styles.line} />
 
-            <div className={styles.info}>
-                <p className={styles.info__name}>Avg. distance</p>
-                <p className={styles.info__data}>{planetContent[planetIndex].distance} km</p>
-            </div>
-            <div className={styles.info}>
-                <p className={styles.info__name}>Est. travel time</p>
-                <p className={styles.info__data}>{planetContent[planetIndex].travelTime}</p>
-            </div>
+
         </div>)
 }
