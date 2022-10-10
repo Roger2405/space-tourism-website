@@ -4,7 +4,6 @@
 
 
     .title {
-        text-align: center;
         text-transform: uppercase;
         font-size: 1rem;
         letter-spacing: 2.7px;
@@ -26,7 +25,7 @@
 
     .line {
         color: #383B4B;
-        width: 100%;
+        margin: 0 1.5rem;
     }
 
     .links {
@@ -50,7 +49,6 @@
     }
 
     .info {
-        text-align: center;
 
         &__profession {
             font-family: 'Bellefair', serif;

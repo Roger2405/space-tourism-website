@@ -29,17 +29,17 @@ export default function Technology() {
     return (
         <div className={styles.technology}>
             <h1 className={styles.title}><b>03</b>Space Launch 101</h1>
-
             <img className={styles.image} src={Img01} alt="" />
 
+
             <div className={styles.links}>
-                <a onClick={() => setTechIndex(0)} className={`${styles.links__link} ${styles.active}`}>1</a>
-                <a onClick={() => setTechIndex(1)} className={`${styles.links__link}`}>2</a>
-                <a onClick={() => setTechIndex(2)} className={`${styles.links__link}`}>3</a>
+                <a onClick={() => setTechIndex(0)} className={`${styles.links__link} ${techIndex === 0 ? (styles.active) : ''}`}>1</a>
+                <a onClick={() => setTechIndex(1)} className={`${styles.links__link} ${techIndex === 1 ? (styles.active) : ''}`}>2</a>
+                <a onClick={() => setTechIndex(2)} className={`${styles.links__link} ${techIndex === 2 ? (styles.active) : ''}`}>3</a>
             </div>
 
-            <p>THE TERMINOLOGY…</p>
-            <h2>{techContent[techIndex].name}</h2>
+            <p className={styles.subtitle}>THE TERMINOLOGY…</p>
+            <h2 className={styles.name}>{techContent[techIndex].name}</h2>
             <p>{techContent[techIndex].text}</p>
 
 

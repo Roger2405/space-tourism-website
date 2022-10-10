@@ -2,13 +2,15 @@ import Logo from '../../assets/shared/logo.svg';
 import MenuIcon from '../../assets/shared/icon-hamburger.svg';
 import CloseIcon from '../../assets/shared/icon-close.svg';
 
-import Styles from './Header.module.scss';
-import { Link, Outlet } from 'react-router-dom';
-import Nav from '../Nav';
+import { Link, Outlet, useParams, useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
+
+import Styles from './Header.module.scss';
 
 export default function Header() {
     const [showNav, setShowNav] = useState(false);
+    const [activeLink, setActiveLink] = useState(0);
+
     return (
         <>
             <header className={Styles.header}>
@@ -17,18 +19,19 @@ export default function Header() {
                 </Link>
                 <img className={Styles.menu} onClick={() => setShowNav(!showNav)} src={!showNav ? MenuIcon : CloseIcon} alt="" />
                 <div className={`${Styles['div-navigation']} ${!showNav ? (Styles.hide) : ''}`}>
-                    <nav className={Styles.navigation} onClick={() => {
-                        setShowNav(false)
+                    <nav className={Styles.navigation} onClick={(e) => {
+                        setShowNav(false);
+                        e.preventDefault();
                     }}>
-                        <Link to={'/'} className={Styles.link}><span>00</span>Home</Link>
-                        <Link to={'/destination'} className={Styles.link}><span>01</span>Destination</Link>
-                        <Link to={'/crew'} className={Styles.link}><span>02</span>Crew</Link>
-                        <Link to={'/technology'} className={Styles.link}><span>03</span>Technology</Link>
+                        <Link onClick={() => setActiveLink(0)} to={'/'} className={`${Styles.link} ${activeLink === 0 ? (Styles.active) : ''}`}><span>00</span>Home</Link>
+                        <Link onClick={() => setActiveLink(1)} to={'/destination'} className={`${Styles.link} ${activeLink === 1 ? (Styles.active) : ''}`}><span>01</span>Destination</Link>
+                        <Link onClick={() => setActiveLink(2)} to={'/crew'} className={`${Styles.link} ${activeLink === 2 ? (Styles.active) : ''}`}><span>02</span>Crew</Link>
+                        <Link onClick={() => setActiveLink(3)} to={'/technology'} className={`${Styles.link} ${activeLink === 3 ? (Styles.active) : ''}`}><span>03</span>Technology</Link>
                     </nav>
                 </div>
             </header>
 
-            
+
             <Outlet />
         </>
     )

@@ -1,3 +1,5 @@
+$paddingTop: 5.5rem;
+
 :root {
     --dark: #0B0D17;
     --light: #D0D6F9;
@@ -6,6 +8,7 @@
 
 * {
     color: var(--light);
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .app>*:not(header) {
@@ -14,15 +17,27 @@
     font-family: 'Bellefair', serif;
 
     padding-bottom: 3rem;
-    padding-top: 6rem;
+    padding-top: $paddingTop;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 8.5rem;
+    }
 }
+
 
 p {
     font-family: 'Barlow Condensed', sans-serif;
     text-align: center;
     line-height: 1.5rem;
+    padding: 0 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        padding: 0 10rem;
+    }
 }
