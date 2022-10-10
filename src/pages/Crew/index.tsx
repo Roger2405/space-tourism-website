@@ -6,6 +6,8 @@ import Photo01 from '../../assets/crew/image-douglas-hurley.png';
 import Photo02 from '../../assets/crew/image-mark-shuttleworth.png';
 import Photo03 from '../../assets/crew/image-victor-glover.png';
 import Photo04 from '../../assets/crew/image-anousheh-ansari.png';
+import Title from '../../components/Title';
+import TextContainer from '../../components/TextContainer';
 
 
 export default function Crew() {
@@ -41,26 +43,26 @@ export default function Crew() {
 
     return (
         <div className={styles.crew}>
-            <h1 className={styles.title}><b>02</b>Meet your crew</h1>
+            <Title index='2' >Meet your crew</Title>
 
-            <img className={styles.photo} src={crewContent[crewIndex].photo} alt="" />
-
-            <hr className={styles.line} />
-
-            <div className={styles.links}>
-                <a onClick={() => setCrewIndex(0)} className={`${styles.links__link} ${crewIndex === 0 ? (styles.active) : ''}`}></a>
-                <a onClick={() => setCrewIndex(1)} className={`${styles.links__link} ${crewIndex === 1 ? (styles.active) : ''}`}></a>
-                <a onClick={() => setCrewIndex(2)} className={`${styles.links__link} ${crewIndex === 2 ? (styles.active) : ''}`}></a>
-                <a onClick={() => setCrewIndex(3)} className={`${styles.links__link} ${crewIndex === 3 ? (styles.active) : ''}`}></a>
+            <div className={styles['div-photo']}>
+                <img className={styles.photo} src={crewContent[crewIndex].photo} alt="" />
+                <hr className={styles.line} />
+                <div className={styles.links}>
+                    <a onClick={() => setCrewIndex(0)} className={`${styles.links__link} ${crewIndex === 0 ? (styles.active) : ''}`}></a>
+                    <a onClick={() => setCrewIndex(1)} className={`${styles.links__link} ${crewIndex === 1 ? (styles.active) : ''}`}></a>
+                    <a onClick={() => setCrewIndex(2)} className={`${styles.links__link} ${crewIndex === 2 ? (styles.active) : ''}`}></a>
+                    <a onClick={() => setCrewIndex(3)} className={`${styles.links__link} ${crewIndex === 3 ? (styles.active) : ''}`}></a>
+                </div>
             </div>
-            <div className={styles.info}>
-                <p className={styles.info__profession}>{crewContent[crewIndex].profession}</p>
-                <h2 className={styles.info__name}>{crewContent[crewIndex].name}</h2>
-
-                <p className={styles.info__description}>
-                    {crewContent[crewIndex].text}
-                </p>
-
+            <div className={styles['div-info']}>
+                <div className={styles.info}>
+                    <p className={styles.info__profession}>{crewContent[crewIndex].profession}</p>
+                    <h2 className={styles.info__name}>{crewContent[crewIndex].name}</h2>
+                    <TextContainer>
+                        {crewContent[crewIndex].text}
+                    </TextContainer>
+                </div>
             </div>
 
 

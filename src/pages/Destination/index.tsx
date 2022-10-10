@@ -5,6 +5,7 @@ import Mars from '../../assets/destination/image-mars.png';
 import Europa from '../../assets/destination/image-europa.png';
 import Titan from '../../assets/destination/image-titan.png';
 import { useEffect, useState } from "react";
+import Title from "../../components/Title";
 
 export default function Destination() {
     const [planetIndex, setPlanetIndex] = useState(0);
@@ -48,7 +49,7 @@ export default function Destination() {
 
     return (
         <div className={styles.destination}>
-            <h1 className={styles.title}><b>01</b>Pick your destination</h1>
+            <Title index="1" >Pick your destination</Title>
             <img className={styles.image} src={planetContent[planetIndex].src} alt="" />
 
             <div className={styles.links}>
@@ -67,13 +68,15 @@ export default function Destination() {
             </div>
             <hr className={styles.line} />
 
-            <div className={styles.info}>
-                <p className={styles.info__name}>Avg. distance</p>
-                <p className={styles.info__data}>{planetContent[planetIndex].distance} km</p>
-            </div>
-            <div className={styles.info}>
-                <p className={styles.info__name}>Est. travel time</p>
-                <p className={styles.info__data}>{planetContent[planetIndex].travelTime}</p>
+            <div className={styles['div-info']}>
+                <div className={styles.info}>
+                    <p className={styles.info__name}>Avg. distance</p>
+                    <p className={styles.info__data}>{planetContent[planetIndex].distance} km</p>
+                </div>
+                <div className={styles.info}>
+                    <p className={styles.info__name}>Est. travel time</p>
+                    <p className={styles.info__data}>{planetContent[planetIndex].travelTime}</p>
+                </div>
             </div>
         </div>)
 }

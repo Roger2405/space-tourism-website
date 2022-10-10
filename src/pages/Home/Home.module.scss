@@ -1,10 +1,19 @@
 .home {
     background-image: url('../../assets/home/background-home-mobile.jpg');
 
+    @media screen and (min-width: 768px) {
+        background-image: url(../../assets/home/background-home-tablet.jpg);
+
+    }
+
+    @media screen and (min-width: 1440px) {
+        background-image: url(../../assets/home/background-home-desktop.jpg);
+    }
+
     display: flex;
     flex-direction: column;
 
-    .title {
+    .titleHome {
         color: var(--light);
         text-transform: uppercase;
         font-weight: 200;
@@ -14,6 +23,7 @@
 
         @media screen and (min-width: 768px) {
             font-size: 1.25rem;
+            margin-top: 4.5rem;
         }
 
 
@@ -33,7 +43,11 @@
     .link {
         margin: auto;
         margin-bottom: 0;
+        margin-bottom: 3rem;
 
+        @media screen and (min-width: 768px) {
+            margin-bottom: 5.625rem;
+        }
 
 
         .button {
@@ -42,7 +56,7 @@
             width: 150px;
 
             background-color: var(--white);
-            border-radius: 5rem;
+            border-radius: 25rem;
 
             display: flex;
             justify-content: center;
@@ -51,12 +65,21 @@
 
             text-decoration: none;
 
+            @media screen and (min-width: 768px) {
+                height: 242px;
+                width: 242px;
+            }
+
             span {
                 text-transform: uppercase;
                 font-family: 'Bellefair', serif;
                 color: var(--dark);
                 letter-spacing: 1.25px;
                 font-size: 1.25rem;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 2rem;
+                }
 
             }
         }

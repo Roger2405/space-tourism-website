@@ -2,14 +2,15 @@ import Logo from '../../assets/shared/logo.svg';
 import MenuIcon from '../../assets/shared/icon-hamburger.svg';
 import CloseIcon from '../../assets/shared/icon-close.svg';
 
-import { Link, Outlet, useParams, useSearchParams } from 'react-router-dom';
+import { Link, matchPath, Outlet, parsePath, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
-import Styles from './Header.module.scss';
+import Styles from './Navigation.module.scss';
 
 export default function Header() {
     const [showNav, setShowNav] = useState(false);
     const [activeLink, setActiveLink] = useState(0);
+
 
     return (
         <>

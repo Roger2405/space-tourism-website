@@ -1,0 +1,12 @@
+.text {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    line-height: 1.5rem;
+    padding: 0 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        width: 60vw;
+        margin: 0 auto;
+        line-height: 1.75rem;
+    }
+}

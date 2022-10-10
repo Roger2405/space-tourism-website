@@ -16,7 +16,6 @@ $paddingTop: 5.5rem;
 
     font-family: 'Bellefair', serif;
 
-    padding-bottom: 3rem;
     padding-top: $paddingTop;
 
     background-position: center;
@@ -30,6 +29,7 @@ $paddingTop: 5.5rem;
     }
 }
 
+/*
 
 p {
     font-family: 'Barlow Condensed', sans-serif;
@@ -38,6 +38,7 @@ p {
     padding: 0 1.5rem;
 
     @media screen and (min-width: 768px) {
-        padding: 0 10rem;
+        padding: 0 6rem;
+        line-height: 1.75rem;
     }
-}
+}*/

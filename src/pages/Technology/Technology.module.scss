@@ -1,25 +1,22 @@
 .technology {
     background-image: url(../../assets/technology/background-technology-mobile.jpg);
 
-
-    .title {
-        text-transform: uppercase;
-        font-size: 1rem;
-        letter-spacing: 2.7px;
-        font-weight: 400;
-        color: var(--white);
-
-        b {
-            opacity: .25;
-            margin-right: 1rem;
-        }
+    @media screen and (min-width: 768px) {
+        background-image: url(../../assets/technology/background-technology-tablet.jpg);
     }
 
+    @media screen and (min-width: 1440px) {
+        background-image: url(../../assets/technology/background-technology-desktop.jpg);
+    }
 
     .image {
         width: 100%;
 
         margin: 2rem auto 0;
+
+        @media screen and (min-width: 768px) {
+            margin: 4rem 0 1rem;
+        }
     }
 
 
@@ -34,6 +31,11 @@
         &__link {
             width: 40px;
             height: 40px;
+
+            @media screen and (min-width: 768px) {
+                width: 60px;
+                height: 60px;
+            }
 
             border-radius: 5rem;
             background-color: white;
@@ -61,13 +63,24 @@
 
     .subtitle {
         letter-spacing: 2.36px;
+        line-height: 1.5rem;
+
+        @media screen and (min-width: 768px) {
+            line-height: 2.5rem;
+        }
+
     }
 
     .name {
+        font-family: 'Bellefair', serif;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
         font-size: 1.5rem;
         color: var(--white);
-        margin: .5rem auto 1rem;
 
-        font-family: 'Bellefair', serif;
+        @media screen and (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+
     }
 }
