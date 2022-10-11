@@ -46,10 +46,9 @@ $borderHeight: 3px;
         width: 65%;
 
         background: rgba(68, 68, 68, 0.25);
-        box-shadow: 0 .25rem .5rem 0 rgba(31, 38, 135, 0.37);
+
         backdrop-filter: blur(32px);
         -webkit-backdrop-filter: blur(32px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
 
         z-index: 15;
 
@@ -157,7 +156,7 @@ $borderHeight: 3px;
 
         .line {
             display: inline-block;
-            width: calc(100vw/3);
+            width: 60%;
             height: 1px;
             opacity: .25;
             transform: translateX(30px);
