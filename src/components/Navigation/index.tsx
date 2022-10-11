@@ -21,6 +21,7 @@ export default function Header() {
                 <Link to={'/'} onClick={() => setActiveLink('')} >
                     <img className={Styles.logo} src={Logo} alt="" />
                 </Link>
+                <hr className={Styles.line} />
                 <img className={Styles.menu} onClick={() => setShowNav(!showNav)} src={!showNav ? MenuIcon : CloseIcon} alt="" />
                 <div className={`${Styles['div-navigation']} ${!showNav ? (Styles.hide) : ''}`}>
                     <nav className={Styles.navigation} onClick={(e) => {
