@@ -8,8 +8,10 @@ import Home from './pages/Home'
 import './index.scss';
 import Crew from './pages/Crew';
 import Technology from './pages/Technology';
+import { useEffect } from 'react';
 
 function App() {
+
   return (
     <div className='app'>
       <Routes>
