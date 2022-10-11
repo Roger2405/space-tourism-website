@@ -18,4 +18,10 @@
         font-size: 1.25rem;
         letter-spacing: 3.38px;
     }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 1.75rem;
+        padding-top: 4.75rem;
+        margin-left: 10rem;
+    }
 }

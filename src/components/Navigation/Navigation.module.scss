@@ -131,3 +131,28 @@ $borderHeight: 3px;
         }
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .header {
+        margin-top: 2.5rem;
+
+        .logo {
+            padding-left: 3rem;
+        }
+
+        .div-navigation {
+            padding: 0 8rem;
+
+            .navigation {
+
+
+                .link {
+
+                    span {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}

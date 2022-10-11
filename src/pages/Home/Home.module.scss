@@ -8,37 +8,54 @@
 
     @media screen and (min-width: 1440px) {
         background-image: url(../../assets/home/background-home-desktop.jpg);
+
+        flex-direction: row;
+        align-items: end;
     }
 
     display: flex;
     flex-direction: column;
 
-    .titleHome {
-        color: var(--light);
-        text-transform: uppercase;
-        font-weight: 200;
-        font-size: 1rem;
-        letter-spacing: 2.7px;
-        margin-top: 1rem;
+    .content {
 
-        @media screen and (min-width: 768px) {
-            font-size: 1.25rem;
-            margin-top: 4.5rem;
+        @media screen and (min-width: 1440px) {
+            padding: 8rem;
+            text-align: start;
         }
 
 
-        b {
-            font-family: 'Bellefair', serif;
-            display: inline-block;
-            padding: 1rem 0;
-            color: var(--white);
-            font-size: 5rem;
+        .titleHome {
+            color: var(--light);
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 1rem;
+            letter-spacing: 2.7px;
+            margin-top: 1rem;
 
             @media screen and (min-width: 768px) {
-                font-size: 9.375rem;
+                font-size: 1.25rem;
+                margin-top: 4.5rem;
+            }
+
+
+
+
+
+
+            b {
+                font-family: 'Bellefair', serif;
+                display: inline-block;
+                padding: 1rem 0;
+                color: var(--white);
+                font-size: 5rem;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 9.375rem;
+                }
             }
         }
     }
+
 
     .link {
         margin: auto;
@@ -49,6 +66,10 @@
             margin-bottom: 5.625rem;
         }
 
+        @media screen and (min-width: 1440px) {
+            margin-right: 10rem;
+            margin-bottom: 8rem;
+        }
 
         .button {
 
