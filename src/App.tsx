@@ -10,7 +10,6 @@ import Crew from './pages/Crew';
 import Technology from './pages/Technology';
 
 function App() {
-
   return (
     <div className='app'>
       <Routes>

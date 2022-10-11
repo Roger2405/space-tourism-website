@@ -1,111 +1,130 @@
 .crew {
     background-image: url(../../assets/crew/background-crew-mobile.jpg);
+    height: 100vh;
 
     @media screen and (min-width: 768px) {
         background-image: url(../../assets/crew/background-crew-tablet.jpg);
+
     }
 
     @media screen and (min-width: 1440px) {
         background-image: url(../../assets/crew/background-crew-desktop.jpg);
+
     }
 
-    @media screen and (min-width: 768px) {
+    .content {
         display: flex;
+        height: 100%;
         flex-direction: column-reverse;
-        justify-content: start;
 
-    }
-
-    .div-photo {
         @media screen and (min-width: 768px) {
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-between;
-            height: 100%;
-
-            .line {
-                display: none;
-            }
-
+            flex-direction: column;
         }
 
-        .photo {
+        @media screen and (min-width: 1440px) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 10rem;
+        }
 
+        .div-photo {
+            margin: 0 1.5rem;
+            border-bottom: 1px solid #383B4B;
 
             @media screen and (min-width: 768px) {
-                max-height: 80%;
-                height: 500px;
+                height: 100%;
+                border: none;
             }
 
-            height: 14rem;
-            margin: 0 auto;
-            display: block;
-            margin-top: 2rem;
+            @media screen and (min-width: 1440px) {
+                height: fit-content;
+            }
+
+
+            .photo {
+                max-width: 200px;
+
+                @media screen and (min-width: 768px) {
+                    position: absolute;
+                    bottom: 0;
+                    left: calc(50% - 200px);
+                    max-width: 450px;
+                }
+
+                @media screen and (min-width: 1440px) {
+                    position: relative;
+                    max-width: 700px;
+                }
+
+
+            }
         }
 
-        .line {
-            color: #383B4B;
-            margin: 0 1.5rem;
-        }
 
-        .links {
+        .div-info {
+            flex-basis: 50%;
+
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem auto;
+            flex-direction: column;
 
-
-            &__link {
-                background-color: var(--white);
-                opacity: .2;
-                border-radius: 1rem;
-                height: 10px;
-                width: 10px;
-
-                &.active {
-                    opacity: 1;
-                }
+            @media screen and (min-width: 768px) {
+                flex-direction: column-reverse;
             }
 
-        }
+            @media screen and (min-width:1440px) {}
 
-    }
+            .info {
+                &__profession {
+                    font-family: 'Bellefair', serif;
+                    opacity: .5;
+                    text-transform: uppercase;
+                    line-height: 2.5rem;
 
-    .div-info {
-        @media screen and (min-width: 768px) {
-            margin-top: 3rem;
-            height: 250px;
-        }
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.5rem;
+                    }
 
-        .info {
-
-
-            &__profession {
-                font-family: 'Bellefair', serif;
-                opacity: .5;
-                text-transform: uppercase;
-                line-height: 2.5rem;
-
-                @media screen and (min-width: 768px) {
-                    font-size: 1.5rem;
+                    @media screen and (min-width: 1440px) {
+                        text-align: left;
+                        font-size: 2rem;
+                        margin-bottom: 1rem;
+                    }
                 }
+
             }
 
-            &__name {
-                font-family: 'Bellefair', serif;
-                text-transform: uppercase;
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-                color: var(--white);
+            .links {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                margin: 2rem auto;
+                width: 100%;
 
-                @media screen and (min-width: 768px) {
-                    font-size: 2.5rem;
-
+                @media screen and (min-width: 1400px) {
+                    justify-content: flex-start;
+                    margin: 6rem 0;
+                    gap: 1.5rem;
                 }
-            }
 
-            p {
-                margin: 0 auto;
+
+                &__link {
+                    background-color: var(--white);
+                    opacity: .2;
+                    border-radius: 1rem;
+                    height: 10px;
+                    width: 10px;
+
+                    @media screen and (min-width: 1400px) {
+                        height: 15px;
+                        width: 15px;
+                    }
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+
             }
         }
 

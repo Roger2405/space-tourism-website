@@ -9,96 +9,122 @@
         background-image: url(../../assets/destination/background-destination-desktop.jpg);
     }
 
+    .content {
+        padding: 0 1.5rem;
 
-    .image {
-        height: 170px;
-        margin: 2.5rem auto;
-        display: block;
-
-        @media screen and (min-width: 768px) {
-            height: 300px;
-        }
-    }
-
-    .links {
         display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        letter-spacing: 2.37px;
+        flex-direction: column;
 
         @media screen and (min-width: 768px) {
-            letter-spacing: 2.7px;
-            gap: 2.25rem;
-        }
-
-        a {
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--white);
-            line-height: 2rem;
-            border-bottom: 2px solid #FFFFFF00;
-
-            &:hover:not(.active) {
-                border-bottom: 2px solid #FFFFFF44;
-            }
-
-            &.active {
-                border-bottom: 2px solid var(--white);
-            }
-        }
-
-    }
-
-    .planet {
-        margin-top: 1.25rem;
-
-        @media screen and (min-width: 768px) {
-            margin-top: 2rem;
-        }
-
-        .name {
-            font-family: 'Bellefair', serif;
-            text-transform: uppercase;
-            font-size: 3.5rem;
-            color: var(--white);
-
-            @media screen and (min-width: 768px) {
-                font-size: 5rem;
-            }
+            padding: 0 6rem;
+            padding-top: 3rem;
 
         }
 
-        .description {
-            margin-top: 1rem;
-            margin-bottom: 3rem;
-            padding: 0 1.5rem;
-
-            @media screen and (min-width: 768px) {
-                padding: 0 6rem;
-
-            }
+        @media screen and (min-width: 1440px) {
+            flex-direction: row;
+            padding-top: 10rem;
+            text-align: left;
         }
-    }
 
-    .line {
-        margin: 2rem 1.5rem;
-        color: #383B4B;
-
-        @media screen and (min-width: 768px) {
-            margin: 2rem 6rem;
-        }
-    }
-
-    .div-info {
-        @media screen and (min-width: 768px) {
+        .links {
             display: flex;
+            gap: 1.5rem;
             justify-content: center;
-            gap: 6rem;
+            letter-spacing: 2.37px;
+
+            @media screen and (min-width: 768px) {
+                letter-spacing: 2.7px;
+                gap: 2.25rem;
+            }
+
+            @media screen and (min-width: 1440px) {
+                justify-content: flex-start;
+            }
+
+            .link {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: var(--white);
+                line-height: 2rem;
+                border-bottom: 2px solid #FFFFFF00;
+
+                &:hover:not(.active) {
+                    border-bottom: 2px solid #FFFFFF44;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                }
+
+                &.active {
+                    border-bottom: 2px solid var(--white);
+                }
+            }
 
         }
+
+
+        .image {
+            height: 170px;
+            margin: 2.5rem auto;
+            display: block;
+
+            @media screen and (min-width: 768px) {
+                height: 300px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                height: 445px;
+            }
+        }
+
+        .planet {
+            margin-top: 1.25rem;
+
+            @media screen and (min-width: 768px) {
+                margin-top: 2rem;
+            }
+
+            .name {
+                font-family: 'Bellefair', serif;
+                text-transform: uppercase;
+                font-size: 3.5rem;
+                color: var(--white);
+
+                @media screen and (min-width: 768px) {
+                    font-size: 5rem;
+                }
+
+            }
+
+
+        }
+
+
 
         .info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #383B4B;
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                justify-content: center;
+                gap: 6rem;
+
+            }
+
+            @media screen and (min-width: 1440px) {
+                justify-content: flex-start;
+            }
+
             text-transform: uppercase;
+
+            display: flex;
+            gap: 4rem;
+
 
             &__name {
                 letter-spacing: 2.36px;
@@ -113,7 +139,7 @@
             }
 
         }
-
     }
+
 
 }

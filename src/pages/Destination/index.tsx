@@ -6,6 +6,7 @@ import Europa from '../../assets/destination/image-europa.png';
 import Titan from '../../assets/destination/image-titan.png';
 import { useEffect, useState } from "react";
 import Title from "../../components/Title";
+import TextContainer from "../../components/TextContainer";
 
 export default function Destination() {
     const [planetIndex, setPlanetIndex] = useState(0);
@@ -50,33 +51,39 @@ export default function Destination() {
     return (
         <div className={styles.destination}>
             <Title index="1" >Pick your destination</Title>
-            <img className={styles.image} src={planetContent[planetIndex].src} alt="" />
+            <div className={styles.content}>
+                <img className={styles.image} src={planetContent[planetIndex].src} alt="" />
+                <div className={styles.description}>
+                    <div className={styles.links}>
+                        <a className={`${styles.link} ${planetIndex === 0 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 0)}>Moon</a>
+                        <a className={`${styles.link} ${planetIndex === 1 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 1)}>Mars</a>
+                        <a className={`${styles.link} ${planetIndex === 2 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 2)}>Europa</a>
+                        <a className={`${styles.link} ${planetIndex === 3 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 3)}>Titan</a>
+                    </div>
+                    <div className={styles.planet}>
+                        <h2 className={styles.name}>{planetContent[planetIndex].name}</h2>
 
-            <div className={styles.links}>
-                <a className={`${styles.link} ${planetIndex === 0 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 0)}>Moon</a>
-                <a className={`${styles.link} ${planetIndex === 1 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 1)}>Mars</a>
-                <a className={`${styles.link} ${planetIndex === 2 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 2)}>Europa</a>
-                <a className={`${styles.link} ${planetIndex === 3 ? (styles.active) : ''}`} onClick={(e) => changePlanet(e, 3)}>Titan</a>
-            </div>
-            <div className={styles.planet}>
-                <h2 className={styles.name}>{planetContent[planetIndex].name}</h2>
+                        <p className={styles.text}>
+                        </p>
+                        <TextContainer>
+                            {planetContent[planetIndex].text}
+                        </TextContainer>
 
-                <p className={styles.description}>
-                    {planetContent[planetIndex].text}
-                </p>
+                    </div>
 
-            </div>
-            <hr className={styles.line} />
+                    <div className={styles.info}>
+                        <div>
+                            <p className={styles.info__name}>Avg. distance</p>
+                            <p className={styles.info__data}>{planetContent[planetIndex].distance} km</p>
+                        </div>
+                        <div>
+                            <p className={styles.info__name}>Est. travel time</p>
+                            <p className={styles.info__data}>{planetContent[planetIndex].travelTime}</p>
+                        </div>
+                    </div>
 
-            <div className={styles['div-info']}>
-                <div className={styles.info}>
-                    <p className={styles.info__name}>Avg. distance</p>
-                    <p className={styles.info__data}>{planetContent[planetIndex].distance} km</p>
                 </div>
-                <div className={styles.info}>
-                    <p className={styles.info__name}>Est. travel time</p>
-                    <p className={styles.info__data}>{planetContent[planetIndex].travelTime}</p>
-                </div>
+
             </div>
         </div>)
 }

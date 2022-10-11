@@ -13,6 +13,10 @@ $borderHeight: 3px;
 
     .logo {
         padding: 1.5rem;
+
+        @media screen and (min-width: 768px) {
+            padding: 2.5rem;
+        }
     }
 
     .menu {
@@ -64,11 +68,17 @@ $borderHeight: 3px;
                     font-weight: 700;
                 }
 
+                &:hover {
+                    border-color: rgb(255, 255, 255, 0.5);
+                }
+
                 @media screen and (min-width: 768px) {
+                    line-height: calc($navBarHeight - $borderHeight);
+
                     &.active {
-                        line-height: calc($navBarHeight - $borderHeight);
                         border-color: var(--white);
                     }
+
 
                 }
 
@@ -151,6 +161,8 @@ $borderHeight: 3px;
                     span {
                         display: inline;
                     }
+
+
                 }
             }
         }

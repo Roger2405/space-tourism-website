@@ -20,8 +20,10 @@ export default function Home() {
                 </TextContainer>
             </div>
             <div className={Styles.link}>
-                <Link className={Styles.button} to={'/destination'} ><span>Explore</span></Link>
-
+                <Link className={Styles.button} reloadDocument to={'/destination'} >
+                    <span className={Styles.button__span}></span>
+                    <span>Explore</span>
+                </Link>
             </div>
         </div >
 

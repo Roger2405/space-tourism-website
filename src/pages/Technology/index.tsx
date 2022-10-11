@@ -9,6 +9,7 @@ import Img03portrait from '../../assets/technology/image-space-capsule-portrait.
 import { useState } from 'react';
 import Title from '../../components/Title';
 import TextContainer from '../../components/TextContainer';
+import Name from '../../components/Name';
 
 
 export default function Technology() {
@@ -43,22 +44,24 @@ export default function Technology() {
     return (
         <div className={styles.technology}>
             <Title index='3' >Space Launch 101</Title>
+            <div className={styles.content}>
+                <picture>
+                    <source media='(max-width: 1439px' srcSet={techContent[techIndex].images.mobile} />
+                    <img className={styles.image} src={techContent[techIndex].images.desktop} alt="" />
+                </picture>
+                <div className={styles.links}>
+                    <a onClick={() => setTechIndex(0)} className={`${styles.links__link} ${techIndex === 0 ? (styles.active) : ''}`}>1</a>
+                    <a onClick={() => setTechIndex(1)} className={`${styles.links__link} ${techIndex === 1 ? (styles.active) : ''}`}>2</a>
+                    <a onClick={() => setTechIndex(2)} className={`${styles.links__link} ${techIndex === 2 ? (styles.active) : ''}`}>3</a>
+                </div>
+                <div className={styles.info}>
+                    <p className={styles.subtitle}>THE TERMINOLOGY…</p>
+                    <Name>{techContent[techIndex].name}</Name>
+                    <TextContainer>{techContent[techIndex].text}</TextContainer>
 
-            <picture>
-                <source media='(max-width: 1439px' srcSet={techContent[techIndex].images.mobile} />
-                <img className={styles.image} src={techContent[techIndex].images.desktop} alt="" />
-            </picture>
+                </div>
 
-
-            <div className={styles.links}>
-                <a onClick={() => setTechIndex(0)} className={`${styles.links__link} ${techIndex === 0 ? (styles.active) : ''}`}>1</a>
-                <a onClick={() => setTechIndex(1)} className={`${styles.links__link} ${techIndex === 1 ? (styles.active) : ''}`}>2</a>
-                <a onClick={() => setTechIndex(2)} className={`${styles.links__link} ${techIndex === 2 ? (styles.active) : ''}`}>3</a>
             </div>
-
-            <p className={styles.subtitle}>THE TERMINOLOGY…</p>
-            <h2 className={styles.name}>{techContent[techIndex].name}</h2>
-            <TextContainer>{techContent[techIndex].text}</TextContainer>
 
 
 

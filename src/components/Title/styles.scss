@@ -2,9 +2,10 @@
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 2.7px;
+    position: absolute;
     font-weight: 400;
+    width: 100%;
     color: var(--white);
-    padding: 0 1.5rem;
     order: 1;
 
 
@@ -17,11 +18,15 @@
         text-align: left;
         font-size: 1.25rem;
         letter-spacing: 3.38px;
+        padding: 0 2.5rem;
     }
 
     @media screen and (min-width: 1440px) {
         font-size: 1.75rem;
         padding-top: 4.75rem;
-        margin-left: 10rem;
+        padding-bottom: 4.5rem;
+        padding-left: 10rem;
+
+        //margin-left: 10rem;
     }
 }
